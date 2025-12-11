@@ -1,17 +1,8 @@
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header.jsx";
+import CoreConcept from "./components/CoreConcept.jsx";
 
 
-/*Props passed with props keyword */
-function CoreConcept(props) {
-  return (
-    <li>
-      <img src={props.image} alt={props.title} />
-      <h3>{props.title}</h3>
-      <p>{props.description}</p>
-    </li>
-  );
-}
 
 /*Props passed without props keyword */
 function CoreNoProp({image, title, description}) {
