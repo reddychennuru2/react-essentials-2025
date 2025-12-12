@@ -3,13 +3,6 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
-let selectedTab = "Please click here";
-
-function handleSelect(SelectedTabButton) {
-    console.log(SelectedTabButton);
-    selectedTab = SelectedTabButton;
-}
-
 /*Props passed without props keyword */
 function CoreNoProp({image, title, description}) {
   return (
@@ -34,6 +27,13 @@ function Propcomponent(props) {
 }
 
 function App() {
+  let selectedTab = "Please click here";
+
+  function handleSelect(SelectedTabButton) {
+    console.log(SelectedTabButton);
+    selectedTab = SelectedTabButton;
+  }
+
   return (
     <div>
       <Header />
