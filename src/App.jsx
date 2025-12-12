@@ -3,8 +3,11 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
-function handleSelect() {
-    console.log('tab clicked');
+let selectedTab = "Please click here";
+
+function handleSelect(SelectedTabButton) {
+    console.log(SelectedTabButton);
+    selectedTab = SelectedTabButton;
 }
 
 /*Props passed without props keyword */
@@ -49,12 +52,14 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-          <TabButton onSelect={handleSelect}> Components </TabButton>
-          <TabButton onSelect={handleSelect}> JSX </TabButton>
-          <TabButton onSelect={handleSelect}> Props </TabButton>
-          <TabButton onSelect={handleSelect}> State </TabButton>
+            {/*using arrow functions to pass params for event handler function () => {handleSelect("xxxx")}  */}
+          <TabButton onSelect={() => handleSelect("components")}> Components </TabButton>
+          <TabButton onSelect={() => handleSelect("JSX")}> JSX </TabButton>
+          <TabButton onSelect={() => handleSelect("Props")}> Props </TabButton>
+          <TabButton onSelect={() => handleSelect("State")}> State </TabButton>
           </menu>
         </section>
+        {selectedTab}
       </main>
     </div>
   );
