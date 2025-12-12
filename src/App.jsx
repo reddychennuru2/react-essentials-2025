@@ -3,6 +3,9 @@ import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
+function handleSelect() {
+    console.log('tab clicked');
+}
 
 /*Props passed without props keyword */
 function CoreNoProp({image, title, description}) {
@@ -46,10 +49,10 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-          <TabButton> Components </TabButton>
-          <TabButton> JSX </TabButton>
-          <TabButton> Props </TabButton>
-          <TabButton> State </TabButton>
+          <TabButton onSelect={handleSelect}> Components </TabButton>
+          <TabButton onSelect={handleSelect}> JSX </TabButton>
+          <TabButton onSelect={handleSelect}> Props </TabButton>
+          <TabButton onSelect={handleSelect}> State </TabButton>
           </menu>
         </section>
       </main>
