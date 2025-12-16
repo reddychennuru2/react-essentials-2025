@@ -53,7 +53,7 @@ function App() {
 
 
   return (
-    <Fragment>
+    <>
       <Header />
       <Propcomponent title="Democomp" width={300} height="200"  />
       <main>
@@ -78,7 +78,7 @@ function App() {
         </section>
         {tabContent}
       </main>
-    </Fragment>
+    </>
   );
 }
 
