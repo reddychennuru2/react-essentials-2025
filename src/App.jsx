@@ -2,7 +2,7 @@ import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
-import { useState } from "react";
+import { useState, Fragment } from "react";
 import { EXAMPLES } from "./data";
 
 /*Props passed without props keyword */
@@ -53,7 +53,7 @@ function App() {
 
 
   return (
-    <div>
+    <Fragment>
       <Header />
       <Propcomponent title="Democomp" width={300} height="200"  />
       <main>
@@ -78,7 +78,7 @@ function App() {
         </section>
         {tabContent}
       </main>
-    </div>
+    </Fragment>
   );
 }
 
