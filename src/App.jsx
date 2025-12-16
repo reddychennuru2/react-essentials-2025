@@ -71,10 +71,10 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {/*using arrow functions to pass params for event handler function () => {handleSelect("xxxx")}  */}
-          <TabButton onSelect={() => handleSelect("components")}> Components </TabButton>
-          <TabButton onSelect={() => handleSelect("jsx")}> JSX </TabButton>
-          <TabButton onSelect={() => handleSelect("props")}> Props </TabButton>
-          <TabButton onSelect={() => handleSelect("state")}> State </TabButton>
+          <TabButton isSelected = {selectedTopic === "components"} onSelect={() => handleSelect("components")}> Components </TabButton>
+          <TabButton isSelected={selectedTopic === "jsx"} onSelect={() => handleSelect("jsx")}> JSX </TabButton>
+          <TabButton isSelected={selectedTopic === "props"} onSelect={() => handleSelect("props")}> Props </TabButton>
+          <TabButton isSelected={selectedTopic === "state"} onSelect={() => handleSelect("state")}> State </TabButton>
           </menu>
         </section>
         {tabContent}

@@ -1,8 +1,8 @@
 /* Using destructuring props*/
-export default function TabButton({children, onSelect}) {
+export default function TabButton({children, onSelect, isSelected}) {
   console.log("TabButton Executing");  
   return (
-    <button onClick={onSelect}>
+    <button className={isSelected ? 'active' : undefined} onClick={onSelect}>
       {children}
     </button>
   );
