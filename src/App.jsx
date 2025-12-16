@@ -2,6 +2,8 @@ import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
+import { useState } from "react";
+import { EXAMPLES } from "./data";
 
 /*Props passed without props keyword */
 function CoreNoProp({image, title, description}) {
@@ -27,12 +29,28 @@ function Propcomponent(props) {
 }
 
 function App() {
-  let selectedTab = "Please click here";
+  console.log("App Executing");
+
+  const [selectedTopic, setSelectedTopic] = useState();
+
+  let tabContent = <p>Please select a topic.</p>;
+  if (selectedTopic) {
+    tabContent = (
+      <div>
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
 
   function handleSelect(SelectedTabButton) {
-    console.log(SelectedTabButton);
-    selectedTab = SelectedTabButton;
+    setSelectedTopic(SelectedTabButton);
+    console.log(selectedTopic);
   }
+
 
   return (
     <div>
@@ -46,7 +64,7 @@ function App() {
             <CoreConcept title={CORE_CONCEPTS[0].title} description={CORE_CONCEPTS[0].description} image={CORE_CONCEPTS[0].image} />
             <CoreConcept {...CORE_CONCEPTS[1]}/>
             <CoreConcept {...CORE_CONCEPTS[2] }/>
-            <CoreNoProp {...CORE_CONCEPTS[1]}/>
+            <CoreNoProp {...CORE_CONCEPTS[3]}/>
           </ul>
         </section>
         <section id="examples">
@@ -54,12 +72,12 @@ function App() {
           <menu>
             {/*using arrow functions to pass params for event handler function () => {handleSelect("xxxx")}  */}
           <TabButton onSelect={() => handleSelect("components")}> Components </TabButton>
-          <TabButton onSelect={() => handleSelect("JSX")}> JSX </TabButton>
-          <TabButton onSelect={() => handleSelect("Props")}> Props </TabButton>
-          <TabButton onSelect={() => handleSelect("State")}> State </TabButton>
+          <TabButton onSelect={() => handleSelect("jsx")}> JSX </TabButton>
+          <TabButton onSelect={() => handleSelect("props")}> Props </TabButton>
+          <TabButton onSelect={() => handleSelect("state")}> State </TabButton>
           </menu>
         </section>
-        {selectedTab}
+        {tabContent}
       </main>
     </div>
   );
