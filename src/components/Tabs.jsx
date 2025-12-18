@@ -1,12 +1,10 @@
-export default function Tabs ({children, buttons, buttonsContainer}) {
-    // dynamic component - as buttonsContainer component is not present we are creating const
-    const ButtonsContainer = buttonsContainer;
+export default function Tabs ({children, buttons, ButtonsContainer}) {
     return (
         <>
             <ButtonsContainer>
                 {buttons}
             </ButtonsContainer>
-        {children}
+            {children}
         </>
     );
 }

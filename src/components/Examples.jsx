@@ -28,7 +28,7 @@ export default function  Examples() {
     return (
         <Section id="examples" title="Examples">
             <Tabs
-                buttonsContainer = "menu" // we can also pass custom component here {Section} or "div"
+                ButtonsContainer = "menu" // we can also pass custom component here {Section} or "div"
                 buttons = {
                         <>
                             <TabButton isSelected = {selectedTopic === "components"} onClick={() => handleSelect("components")}> Components </TabButton>
